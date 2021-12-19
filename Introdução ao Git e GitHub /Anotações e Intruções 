@@ -1,5 +1,5 @@
 
-# Orientações para o uso do Git/GitHub 
+#Orientações para o uso do Git/GitHub 
 
 
 -  Instalação do Git na máquina:
@@ -15,8 +15,18 @@ Baixar o git no site: efetuei a instalação via terminal do linux através das 
 6 - ls -a
 7 - cat .gitconfig
 8 - Se cadastrar no  GitHub;
-   
-9 - Trazendo a pasta do GitHub para a máquina através do terminal: ex.:  git clone https://github.com/Luiz-kuit/dio-desafio-github.git 
+9 - Trazendo a pasta do GitHub para a máquina através do terminal: ex.:  git clone https://github.com/Luiz-kuit/dio-desafio-github.git
+10 - Passo a passo para conferir e levar atualizações da pasta na máquina para o GitHub através do terminal:
+
+cd + pasta que vai incluir
+ls
+git status;
+git add . 
+git status 
+git commit -m + "comentário"
+git status 
+git push 
+Incluir e-mail e senha do GitHub (a senha precisa ser gerado o token, passo a passo de como gerar através do link: https://www.treinaweb.com.br/blog/github-pare-com-as-senhas-e-utilize-tokens-de-acesso   
  
 
 - Comandos básicos no terminal: mudar de pasta, listar as pastas, criar 
