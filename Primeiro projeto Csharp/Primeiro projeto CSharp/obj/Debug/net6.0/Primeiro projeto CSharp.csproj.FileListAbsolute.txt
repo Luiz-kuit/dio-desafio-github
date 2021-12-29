@@ -1,0 +1,15 @@
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\bin\Debug\net6.0\Primeiro projeto CSharp.exe
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\bin\Debug\net6.0\Primeiro projeto CSharp.deps.json
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\bin\Debug\net6.0\Primeiro projeto CSharp.runtimeconfig.json
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\bin\Debug\net6.0\Primeiro projeto CSharp.dll
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\bin\Debug\net6.0\ref\Primeiro projeto CSharp.dll
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\bin\Debug\net6.0\Primeiro projeto CSharp.pdb
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\obj\Debug\net6.0\Primeiro projeto CSharp.csproj.AssemblyReference.cache
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\obj\Debug\net6.0\Primeiro projeto CSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\obj\Debug\net6.0\Primeiro projeto CSharp.AssemblyInfoInputs.cache
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\obj\Debug\net6.0\Primeiro projeto CSharp.AssemblyInfo.cs
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\obj\Debug\net6.0\Primeiro projeto CSharp.csproj.CoreCompileInputs.cache
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\obj\Debug\net6.0\Primeiro projeto CSharp.dll
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\obj\Debug\net6.0\ref\Primeiro projeto CSharp.dll
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\obj\Debug\net6.0\Primeiro projeto CSharp.pdb
+C:\Users\Thyago Santos\source\repos\Primeiro projeto CSharp\Primeiro projeto CSharp\obj\Debug\net6.0\Primeiro projeto CSharp.genruntimeconfig.cache
