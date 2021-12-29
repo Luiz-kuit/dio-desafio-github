@@ -1,0 +1,15 @@
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\bin\Debug\net6.0\Revisao.exe
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\bin\Debug\net6.0\Revisao.deps.json
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\bin\Debug\net6.0\Revisao.runtimeconfig.json
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\bin\Debug\net6.0\Revisao.dll
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\bin\Debug\net6.0\ref\Revisao.dll
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\bin\Debug\net6.0\Revisao.pdb
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\obj\Debug\net6.0\Revisao.csproj.AssemblyReference.cache
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\obj\Debug\net6.0\Revisao.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\obj\Debug\net6.0\Revisao.AssemblyInfoInputs.cache
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\obj\Debug\net6.0\Revisao.AssemblyInfo.cs
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\obj\Debug\net6.0\Revisao.csproj.CoreCompileInputs.cache
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\obj\Debug\net6.0\Revisao.dll
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\obj\Debug\net6.0\ref\Revisao.dll
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\obj\Debug\net6.0\Revisao.pdb
+C:\Users\Thyago Santos\Documents\csharp-introduction\Revisao\obj\Debug\net6.0\Revisao.genruntimeconfig.cache
