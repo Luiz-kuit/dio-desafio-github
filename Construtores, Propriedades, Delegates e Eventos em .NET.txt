@@ -1,0 +1,64 @@
+#Construtores, Propriedades, Delegates e Eventos em .NET
+
+
+- Construtores 
+
+Um construtor é um método especial, que contém o mesmo nome do seu tipo classe, e tem o objetivo de definir valores padrão, limitar uma instância e facilitar a instanciação de um objeto.
+
+Um construtor não possui um retorno.
+Um construtor padrão é sempre definido quando não declaramos nenhum para sua classe.
+Uma classe pode ter mais de um construtor.
+
+Exemplo prático: " Solução ExemploConstrutores": Pasta Pessoa e Program.
+
+Construtor Privado
+
+Exemplo prático: " Solução ExemploConstrutores": Pasta Log e Program.
+
+Chamando o Construtor da herança
+
+Exemplo prático: " Solução ExemploConstrutores": Pasta Aluno e Program.
+
+
+
+- Get e Set
+
+O Get e Set serve para que você possa atribuir um valor em uma variável de maneira controlada e com validações.
+
+Exemplo prático: " Solução ExemploConstrutores": Pasta Data e Program.
+
+
+
+- Modificadores 
+
+Readonly
+
+O modificador readonly (somente leitura) bloqueia um campo contra alterações que não sejam em sua inicialização ou pelo próprio construtor.
+
+Exemplo prático: " Solução ExemploConstrutores": Pasta Pessoa
+
+Constante
+
+Uma constante representa um valor que somente pode ser atribuído no momento de sua inicialização, e não pode ser modificado posteriormente.
+
+Exemplo prático: " Solução ExemploConstrutores": Program.
+
+
+
+- Delegates
+
+Um delegate é uma maneira de passar um método como referência, podendo ser usado como um callback, aceitando qualquer método que contenha a mesma assinatura.
+
+Exemplo prático: " Solução ExemploConstrutores": Pasta Calculadora e Program
+
+Multi Cast Delegate
+
+Exemplo prático: " Solução ExemploConstrutores": Pasta Calculadora e Program.
+
+
+
+- Eventos 
+
+Eventos é um mecanismo de comunicação entre objetos, onde existe um publisher, que realiza o evento e o subscriber, que se inscreve em um evento.
+
+Exemplo prático: " Solução ExemploConstrutores": Pasta Calculadora, Matematica e Program.
