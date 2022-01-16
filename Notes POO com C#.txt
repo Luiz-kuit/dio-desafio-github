@@ -1,0 +1,123 @@
+#Programando com Orientação a Objeto com C#
+
+4 Pilares da Orientação a Objetos:
+- Herança 
+- Encapsulamento 
+- Polimorfismo 
+- Abstração
+
+
+O principal conceito da POO são classes e objetos.
+
+Paradigmas: Um modelo de técnicas, estruturas e formas de solucionar um problema.
+
+
+Abstração 
+
+Abstrair um objeto do mundo real para um contexto específico, considerando apenas os atributos importantes.
+
+Abstração na Prática
+
+Criando a pasta no Virtual Studio Code:  
+
+dotnet new sln - -name ExemploPOO - Criando uma solução
+mkdir ExemploPOO
+cd "ExemploPOO"
+dotnet new console 
+cd ..
+dotnet sln add ExemploPOO/ExemploPOO.csproj
+code .
+
+Exemplo prático na " Solução Exemplo POO ": Pasta Models > Pessoa
+
+
+Encapsulamento
+
+O encapsulamento serve para proteger uma classe e definir limites para alteração de suas propriedades.
+
+Serve para ocultar seu comportamento e expor somente o necessário. 
+
+Exemplo prático na " Solução Exemplo POO ": Pasta Models > Retangulo
+
+
+Herança 
+
+A herança nos permite reutilizar atributos, métodos e comportamentos de uma classe em outras classes.
+
+Serve para agrupar objetos que são do mesmo tipo, porém com características diferentes.
+
+Exemplo prático na " Solução Exemplo POO ": Pasta Models > Aluno e Professor
+
+
+Polimorfismo 
+
+O polimorfismo vem do grego e significa “muitas formas”.
+
+Com o polimorfismo, podemos sobrescrever métodos das classes filhas para que se comportem de maneira diferente e ter sua própria implementação.
+
+Para sobrescrever o método coloca o " virtual " (conforme modelo abaixo) na pasta que está sendo herdada. 
+
+Ex.: public virtual void Apresentar()  
+
+E na pasta que recebe a herança coloca " override " (conforme modelo abaixo).
+
+Ex.: public override void Apresentar()
+
+Exemplo prático na  " Solução Exemplo POO ": 
+
+1 - Utilizando a pastas Pessoa1, para o uso do "virtual" que autoriza a sobrescrever o método "Apresentar". 
+
+2 - Utilizando a pasta "Aluno", para o uso do "override" para sobrescrever o método "Apresentar" da classe "pai".
+
+3 - Utilizando a pasta "Professor", para o uso do "override" para sobrescrever o método "Apresentar" da classe "pai".
+
+Mais um exemplo prático de polimorfismo, falando de Tempo de compilação, também conhecido como (Overload/Early Binding): 
+
+Criado na pasta Models > Calculadora: Foi criado uma sobrecarga com 2 métodos de somar. 
+
+Chamando o método de "somar" na "solução" , é dado as opções de quantidade criadas na pasta "calculadora".
+
+
+Classe Abstrata 
+
+Uma classe abstrata tem como objetivo ser exclusivamente um modelo para ser herdado, portanto não pode ser instanciada.
+
+Você pode implementar métodos ou deixa-los a cargo de quem herdar.
+
+Exemplo prático na " Solução Exemplo POO ": Pasta Models > Conta e Corrente.
+
+Classe Selada
+
+Uma classe selada tem como objetivo de impedir que outras classes façam uma herança dela, ou seja, nenhuma classe pode ser sua derivada.
+
+Também existem métodos e propriedades seladas.
+
+Exemplo prático é a utilização do "sealead", conforme ex. abaixo. E na 
+ " Solução Exemplo POO ": Pasta Models > Diretor.
+ex.: public override void Apresentar()
+
+
+Classe Object 
+
+A classe System.Object é a mãe de todas as classes na hierarquia do .NET
+
+Todas as classes derivam, direta ou indiretamente da classe Object, e ela tem como objetivo prover serviços de baixo nível para suas classes filhas.
+
+Exemplo prático na " Solução Exemplo POO ": Pasta Models > Computador.
+
+
+Interfaces
+
+Uma interface é um contrato que pode ser implementado por uma classe.
+
+É como se fosse uma classe abstrata, podendo definir métodos abstratos para serem implementados.
+
+Assim como uma classe abstrata, uma interface não pode ser instanciada.
+
+Interfaces na prática: exemplo na  " Solução Exemplo POO ": Pasta Models > Calculadora e Pasta ICalculadora.
+
+Obs.: Se a implementação for feita na própria Interface ela se torna opcional na pasta que vai herdar, há não ser que queira mudar o método. 
+
+Manipulando Arquivos
+
+Exemplo prático: " Solução Exemplo POO ": Pasta Helper e Program.
