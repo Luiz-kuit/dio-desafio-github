@@ -1,0 +1,78 @@
+#Criando uma API REST Simples com .NET 
+
+
+API: É uma interface de programação a uma aplicação. 
+
+Utilizando  como exemplo projeto da DIO.CopaNordeste
+
+- Cria um novo projeto dentro da solução;
+
+- Copia as informações da classe program DIO.CopaNordeste  para classe program do novo projeto;
+
+- Clica com botão direito nas dependências do novo projeto e adiciona referência de projeto. 
+Obs.: Na prática estar tendo como referência o projeto DIO.CopaNordeste 
+
+- Excluir a pasta program do DIO.CopaNordeste que está servindo como base e colocar para rodar a pasta criada para realizar a API que é a DIO.CopaNordeste.Console: clica com o botão direito no projeto e aperta em definir como projeto de inicialização.
+
+- Vai na propriedades do projeto base e altera a saída para "Biblioteca de Classes"  
+
+
+Criando a API REST 
+
+- Clica com o botão direito na solution;
+- Novo projeto;
+- Utiliza da ferramenta: ASP.NET Core Web API 
+
+Obs.: WEBAPI REST 
+MVC: Model, View, Controller
+
+
+Obtendo o controller da "Equipe" e jogar para API 
+
+- Cria uma classe "EquipeModel" 
+- Clica com botão direito nas dependências do projeto criado e adiciona referência de projeto.
+- Copia e cola os atributos da classe "Equipe" 
+- Copia e cola o id da  "EntidadeBase"
+- Retira o protected do id
+- Trocar de private para public (O model não precisa necessariamente ser igual a entidade)
+
+Criando Controller Automático
+
+- Criar o controller dentro  da classe controllers: Clica com o botão direito em controllers > controlador MVC com ações leitura/gravação (Ações Prontas)
+
+Criando Controller Manual
+
+- Criar o controller dentro  da classe controllers: Clica com o botão direito em controllers > Controlador MVC - Vazio
+Obs.: Verificar comentários na classe criada. 
+
+
+App Postman e utilização
+
+- Criação de nova Collection 
+- Cria o método "Listar Equipes"
+- Criar método "Atualizar Equipe" Ex.: Coloca a url e adiciona no final que quer atualizar o id "/1" > clica em Body > raw > tipo JASON > coloca {"id": 1, "nome": "nome" } > 
+
+Gravar dados inseridos pelo usuário
+
+Exemplo:
+
+        private readonly IRepositorio<Equipe> _repositorioEquipe;
+
+        //Injenção de dependência (desacomplando o repositório do controller)
+        public EquipeController(IRepositorio<Equipe> repositorioEquipe)
+        {
+            _repositorioEquipe = repositorioEquipe;
+        }
+
+Criar construtor na classe EquipeModel 
+
+public EquipeModel(Equipe equipe)
+        {
+            Id = equipe.retornaId();
+            Estado = equipe.retornaEstado();
+            Nome = equipe.retornaNome();
+            Estadio = equipe.retornaEstadio();
+            CidadeEstadio = equipe.retornaCidadeEstadio();
+            Excluido = equipe.retornaExcluido();
+
+        }
