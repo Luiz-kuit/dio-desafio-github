@@ -1,0 +1,91 @@
+#SQL Server: Boas práticas em bancos relacionais
+
+
+ORM: São componentes utilizados para abstrair(ocultar) as consultas de dados. 
+
+Criando Tabela "Produtos" utilizando as boas práticas
+
+CREATE TABLE PRODUTOS(
+
+	CODIGO		       INT		          NOT NULL,
+	DESCRICAO         VARCHAR(50) NOT NULL,
+	DATA_VALIDADE DATETIME,
+	EAN			VARCHAR(15) NOT NULL,	
+	IND_INATIVO        INT                   NOT NULL  DEFAULT 0
+);
+
+Criando a chave primária, campo utilizado para relacionar a tabela
+
+ALTER TABLE PRODUTOS --Alterar a tabela produto
+	ADD CONSTRAINT PK_PRODUTOS --Adicionar uma validação 
+		PRIMARY KEY (CODIGO); --Tipo da chave que estará no campo código
+
+
+Criando o índice e realizar inserts 
+(O Índice para busca mais rápida dos campos)
+
+CREATE INDEX IDX01_PRODUTOS_EAN --tabela e campo que está associado ao índice
+		ON PRODUTOS(EAN);
+
+Inserido os dados 
+
+Insert em todos os campos 
+
+INSERT INTO PRODUTOS VALUES (1, 'Nome do Produto', GETDATE(), '1234567890', 0); --GateDate() inclui a data e a hora atual
+
+Realizando inserts em campos específicos
+
+
+Implementando Funcionalidades
+
+SELECT COUNT(*) AS TOTAL 
+	FROM PRODUTOS
+
+
+Criando a tabela Loja
+
+CREATE TABLE LOJA (
+	CODIGO           INT		      NOT NULL,
+	NOME		  VARCHAR(50)  NOT NULL,
+	IND_INATIVO   INT                    NOT NULL DEFAULT 0
+	CONSTRAINT LOJA_PK PRIMARY KEY(CODIGO) --Forma de criar chave primária
+);
+
+Insert de Lojas 
+
+INSERT INTO LOJA(CODIGO, NOME) VALUES (1, 'Matriz Paulista');
+INSERT INTO LOJA(CODIGO, NOME) VALUES (2, 'Filial Gravatá');
+INSERT INTO LOJA(CODIGO, NOME) VALUES (3, 'Filial João Pessoa');
+
+--Criando estoque por lojas 
+
+CREATE TABLE ESTOQUE (
+	CODIGO_PRODUTO INT NOT NULL, 
+	CODIGO_MATRIZ     INT NOT NULL, 
+	CODIGO_FILIAL        INT NOT NULL,
+	QUANTIDADE           DECIMAL NOT NULL DEFAULT 0
+	CONSTRAINT ESTOQUE_PK PRIMARY KEY(CODIGO_PRODUTO, CODIGO_MATRIZ, CODIGO_FILIAL)
+);
+
+Insert de Estoque
+
+--Criando chave estrangeira para relacionar a chave LOJAS com a chave ESTOQUE.
+
+ALTER TABLE ESTOQUE --Altere a tabela ESTOQUE
+	ADD CONSTRAINT FK_ESTOQUE_PRODUTOS --Adicione uma validação 
+		FOREIGN KEY (CODIGO_PRODUTO) --Tipo FOREIGN KEY que vai pegar o CODIGO_PRODUTO
+		REFERENCES PRODUTOS(CODIGO) --Está referenciando a tabela PRODUTOS do elemento CODIGO
+
+Criando chave estrangeira para relacionar a chave LOJAS com a chave ESTOQUE.
+
+ALTER TABLE ESTOQUE --Altere a tabela ESTOQUE
+	ADD CONSTRAINT FK_ESTOQUE_PRODUTOS --Adicione uma validação 
+		FOREIGN KEY (CODIGO_PRODUTO) --Tipo FOREIGN KEY que vai pegar o CODIGO_PRODUTO
+		REFERENCES PRODUTOS(CODIGO); --Está referenciando a tabela PRODUTOS do elemento CODIGO
+
+ALTER TABLE ESTOQUE --Altere a tabela ESTOQUE
+	ADD CONSTRAINT FK_ESTOQUE_LOJAS --Adicione uma validação 
+		FOREIGN KEY (CODIGO_FILIAL) --Tipo FOREIGN KEY que vai pegar o CODIGO das lojas filiais
+		REFERENCES LOJAS(CODIGO); --Está referenciando a tabela LOJAS do elemento CODIGO
+
+INSERT INTO ESTOQUE(CODIGO_PRODUTO, CODIGO_FILIAL, QUANTIDADE) VALUES (1, 1, 10)
