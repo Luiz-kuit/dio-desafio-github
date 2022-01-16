@@ -1,0 +1,707 @@
+#Banco de Dados | SQL Server 
+
+
+Comandos:
+
+- Botão direito no banco de dados e clicar em nova consulta
+
+SELECT
+coluna1, coluna2
+FROM nome da tabela
+
+SELECT  *
+FROM nome da tabela  : Retorna todos os comandos da tabela. 
+
+Exemplos: 
+
+- Selecionando nome e sobrenome na tabela: 
+
+SELECT firstName,lastName
+FROM person.person;   
+
+- Retirando nomes duplicados em uma tabela
+
+SELECT DISTINCT firstName
+FROM person.Person; 
+
+- Extraindo alguns dados da tabela
+
+SELECT *
+FROM person.person
+WHERE LastName = 'miller' and firstName = 'anna';
+
+SELECT *
+FROM production.Product
+WHERE color = 'blue' or color = 'black';
+
+SELECT *
+FROM production.Product
+WHERE ListPrice > 1500
+
+SELECT *
+FROM production.Product
+WHERE ListPrice > 1500 and ListPrice < 5000;
+
+SELECT *
+FROM production.Product
+WHERE color <> 'red' /*diferente 
+
+SELECT *
+FROM HumanResources.Employee
+WHERE MaritalStatus = 'm' and SalariedFlag = 1 /* Empregados que são casados e são assalariados */
+
+SELECT *
+FROM person.Person
+WHERE FirstName = 'peter' and LastName = 'krebs'
+SELECT *
+FROM person.EmailAddress
+WHERE BusinessEntityID = 26 /* Pegando nome e e-mail do usúario */
+
+Comando Count 
+
+SELECT count (*) 
+FROM person.Person /*Contagem de todas as colunas da tabela*/
+
+SELECT count (Title) 
+FROM person.Person /*Contagem de títulos da tabela*/
+
+SELECT count (DISTINCT title) 
+FROM person.Person /*Contagem de títulos distintos da tabela*/
+
+SELECT count (*) 
+FROM Production.Product /*Contagem de todos os produtos da tabela*/
+
+SELECT count (Size) 
+FROM Production.Product /*Contagem de tamanho dos produtos cadastrados*/
+
+SELECT count (DISTINCT Size) 
+FROM Production.Product /*Contagem de tamanho dos produtos diferentes cadastrados*/
+
+Comando TOP
+
+SELECT TOP 10 *
+FROM Production.Product /* Retorna a quantidade de linhas "selecionada" da tabela */
+
+Order By 
+(Ordenando)
+
+SELECT *
+FROM person.Person
+ORDER BY FirstName asc /* Ordenando em crescente */
+
+SELECT *
+FROM person.Person
+ORDER BY FirstName desc /* Ordenando em decrescente */
+
+SELECT *
+FROM person.Person
+ORDER BY FirstName asc, LastName desc /* Ordenando em crescente e decrescente */
+
+SELECT TOP 10 ProductID 
+FROM Production.Product
+ORDER BY ListPrice desc /* Desafio: Obter o productID dos 10 produtos mais caros cadastrados no sistema */
+
+SELECT TOP 4 name,ProductNumber 
+FROM Production.Product
+ORDER BY ProductID asc /* Desafio: Obter o nome e numero do produto que tem o ProductID entre 1~4 */
+
+Between 
+(Usado para encontrar valor "entre" o mínimo e o máximo)
+
+SELECT *
+FROM Production.Product
+WHERE ListPrice between 1000 and 1500; /* Listando valores "entre" o mínimo e o máximo */
+
+SELECT *
+FROM Production.Product
+WHERE ListPrice NOT between 1000 and 1500; /* Listando valores que NÃO estão "entre" o mínimo e o máximo */
+
+SELECT *
+FROM HumanResources.Employee
+WHERE HireDate between '2009/01/01' and '2010/01/01' 
+order by HireDate /* Cadastro de empregados, conforme limite de datas */
+
+
+ Operador IN 
+(Usamos junto com o WHERE, para verificar se um valor correspondem com qualquer valor passado na lista de valores)
+
+SELECT *
+FROM person.Person
+WHERE BusinessEntityID in (2,7,13) /* Verificando os valores passados na lista */
+
+SELECT *
+FROM person.Person
+WHERE BusinessEntityID NOT in (2,7,13) /* Verificando o oposto dos valores passados na lista */
+
+
+Like 
+(Vamos dizer que você quer encontrar uma pessoa, mais só lembra as iniciais do nome)
+
+SELECT *
+FROM person.Person
+WHERE FirstName like 'ovi%' /* Buscando nome com as inicias do nome */
+
+SELECT *
+FROM person.Person
+WHERE FirstName like '%to' /* Buscando nome com as letras finais do nome */
+
+SELECT *
+FROM person.Person
+WHERE FirstName like '%essa%' /* Buscando nome sem saber se é no inicio ou no fim */
+
+SELECT *
+FROM person.Person
+WHERE FirstName like '%ro_' /* Buscando nome e limitando apenas a um caracter no final */
+
+Desafios Fundamentos SQL 
+
+SELECT count (ListPrice)
+FROM Production.Product
+WHERE ListPrice > 1500; /* Quantos produtos são maiores que $1500 */
+
+SELECT count (LastName)
+FROM Person.Person
+WHERE LastName like 'p%' /* Quantas pessoas iniciam com P */
+
+SELECT count(DISTINCT(city))
+FROM person.Address /* Quantos endereços únicos cadastrados*/
+
+SELECT distinct (city)
+FROM person.Address /* Cidades únicas de cliente cadastrado */
+
+SELECT count (*)
+FROM Production.Product 
+WHERE Color = 'red' AND ListPrice between 500 and 1000 /* Quantos produtos vermelhos tem preço entre 500 a 1000*/
+
+SELECT count (*)
+FROM Production.Product 
+WHERE name like '%road%' ; /* Quantos produtos cadastrados tem a palavra road */
+
+
+Funções de Agregação:  MIN, MAX, SUM e AVG
+(Agregam ou combinam dados de uma tabela em um resultado só)
+
+SELECT TOP 10 *
+FROM Sales.SalesOrderDetail /* Detalhando as vendas */
+
+SELECT TOP 10 sum(LineTotal)
+FROM Sales.SalesOrderDetail /* Somando a linha total */
+
+SELECT TOP 10 sum(LineTotal) AS "Soma"
+FROM Sales.SalesOrderDetail /* Incluindo nome na função (Coluna) */
+
+SELECT TOP 10 MIN(LineTotal) 
+FROM Sales.SalesOrderDetail /* Indentificando o valor mínimo da linha total */
+
+SELECT TOP 10 MAX(LineTotal) 
+FROM Sales.SalesOrderDetail /* Indentificando o valor máximo da linha total */
+
+SELECT TOP 10 AVG(LineTotal) 
+FROM Sales.SalesOrderDetail /* Indentificando o valor médio da linha total */
+
+
+Group By
+(Divide o resultado da sua pesquisa em grupos)
+
+SELECT  SpecialOfferID, SUM (UnitPrice)
+FROM Sales.SalesOrderDetail
+GROUP BY SpecialOfferID /* Agrupando informações de um SpecialOfferID em uma única soma do valor unitário */
+
+SELECT  SpecialOfferID,UnitPrice
+FROM Sales.SalesOrderDetail
+WHERE SpecialOfferID = 9  /* Listando um dos SpecialOfferID que foi agrupado acima */
+
+SELECT ProductId, COUNT(ProductID) AS "CONTAGEM"
+FROM Sales.SalesOrderDetail
+GROUP BY ProductID /* Listando e agrupando a contagem de cada ProductID */
+
+SELECT FirstName, COUNT(firstName) AS "Contagem"
+FROM Person.Person
+GROUP BY FirstName /* Listando e agrupando a contagem de cada nome */
+
+SELECT color,AVG(Listprice) AS "Preco"
+FROM Production.Product
+GROUP BY Color /* Listando e agrupando a média de preço de cada cor */
+
+SELECT color,AVG(Listprice) AS "Preco"
+FROM Production.Product
+WHERE Color = 'Silver'
+GROUP BY Color /* Listando e agrupando a média de preço da cor prata */
+
+SELECT MiddleName,Count(firstname) AS "quantidade"
+FROM Person.Person
+GROUP BY MiddleName /* Desafio: Listando e agrupando a contagem de pessoas com o mesmo MiddleName*/
+
+SELECT TOP 10 productid, SUM(LineTotal) AS "vendas"
+FROM Sales.SalesOrderDetail
+GROUP BY ProductID
+ORDER BY SUM(LineTotal) DESC; /* Desafio: 10 vendas com os maiores valores, do maior valor para o menor*/
+
+SELECT ProductID,COUNT(productid) AS "contagem",
+AVG(OrderQty) AS "media"
+FROM Production.WorkOrder
+GROUP BY ProductID /* Desafio: Agrupando a quantidade de produtos na ordem de serviço e a media de cada agrupamento */
+
+
+Having
+(Usado em junção com o group by para filtrar resultados de um agrupamento, basicamente um where para dados agrupados)
+
+SELECT FirstName, COUNT(FirstName) as "quantidade"  
+FROM Person.Person
+GROUP BY FirstName
+HAVING COUNT(FirstName) > 10 /* Agrupando a quantidade de nomes e ordenando pela quantidade maior que 10 */
+
+SELECT productid, sum(linetotal) as "Total"
+FROM Sales.SalesOrderDetail
+GROUP BY ProductID
+HAVING SUM(LineTotal) between 162000 and 500000 /*Produtos que tem o total de vendas estar entre 162k e 5000k*/
+
+SELECT FirstName, COUNT(FirstName) as "quantidade"  
+FROM Person.Person
+WHERE Title = 'Mr.'
+GROUP BY FirstName
+HAVING COUNT(FirstName) > 10 /* Agrupando a quantidade de nomes e ordenando pela quantidade maior que 10 com o título MR. */
+
+SELECT StateProvinceID, COUNT(stateprovinceid) as "quantidade"
+FROM person.Address
+GROUP BY StateProvinceID
+HAVING COUNT(stateprovinceid) > 1000 /* Desafio: Províncias com maior número de cadastro, estando registradas mais que 1000 vezes */
+
+SELECT productid, AVG(linetotal) as "Total"
+FROM Sales.SalesOrderDetail
+GROUP BY ProductID
+HAVING AVG(LineTotal) < 1000000 /*Produtos que não estão trazendo uma média no total das vendas de 1M */
+
+
+AS
+(Renomeando os nomes das colunas)
+
+SELECT TOP 10 ListPrice as "Preço do Produto"
+FROM Production.Product /* Renomeando a coluna ListPrice para Preço do Produto */
+
+SELECT TOP 10 AVG (ListPrice) as "Preço Médio"
+FROM Production.Product /* Renomeando o preço médio da coluna ListPrice */
+
+SELECT FirstName as "Nome", LastName as "Sobrenome"
+FROM person.Person /* Desafio: Renomeando o nome e sobrenome na coluna Person */ 
+
+SELECT ProductNumber as "Código do Produto"
+FROM Production.Product /* Desafio: Renomeando o código do produto da coluna Product */
+
+SELECT UnitPrice as "Preço Unitário"  
+FROM Sales.SalesOrderDetail  /* Desafio: Renomeando o preço unitário da tabela UnitPrice */
+
+
+Inner Join 
+(Junção interna de tabelas, verificando uma tabela em comum, para assim puxar as outras tabelas)
+
+--Vamos dizer que queremos os nomes dos produtos e as informações de suas subcategorias
+-- ListPrice, nome do produto, nome da subcategoria 
+
+-- Verificando o que ambas tem em comum
+
+SELECT TOP 10 *
+FROM Production.Product
+
+SELECT TOP 10 *
+FROM Production.ProductSubcategory
+
+-- Tem em comum a coluna ProductSubcategoryID, daí iremos fazer a junção das outras informações
+
+SELECT pr.ListPrice, pr.Name, pc.Name
+FROM Production.Product Pr
+INNER JOIN Production.ProductSubcategory PC on PC.ProductSubcategoryID = 
+pr.ProductSubcategoryID
+
+SELECT TOP 10 *
+FROM Production.Product Pr
+INNER JOIN Production.ProductSubcategory PC on PC.ProductSubcategoryID = 
+pr.ProductSubcategoryID --Juntando todos os dados que obtem a coluna em comum: ProductSubcategoryID. Pois não foi selecionado qual coluna queria juntar.
+
+
+-- Desafio 1, Juntar: BusinnessEntityId, Name, PhoneNumberTypeId, 
+
+-- Verificando o que ambas tem em comum
+
+PhoneNumber
+SELECT TOP 10 *
+FROM person.PhoneNumberType
+
+SELECT TOP 10 *
+FROM person.PersonPhone
+
+-- Tem em comum a coluna PhoneNumberTypeId, daí iremos fazer a junção das outras informações
+
+SELECT pp.BusinessEntityID, pt.name, pt.PhoneNumberTypeid, pp.Phonenumber
+FROM Person.PersonPhone PP
+INNER JOIN Person.PhoneNumberType PT on PT.PhoneNumberTypeID = PT.PhoneNumberTypeID  --Juntando os dados que obtem a coluna em comum: PhoneNumberTypeID. 
+
+-- Desafio 2, Juntar: AddressId, city, StateProvinceId, Name.
+
+-- Verificando o que ambas tem em comum
+
+SELECT TOP 10 *
+FROM person.StateProvince
+
+SELECT TOP 10 *
+FROM person.Address
+
+-- Tem em comum a coluna StateProvinceID, daí iremos fazer a junção das outras informações
+
+SELECT TOP 10 PA.AddressId, PA.City, PS.StateProvinceID, PS.Name
+FROM Person.Address PA
+INNER JOIN Person.StateProvince PS ON PS.StateProvinceID = PA.StateProvinceID --Juntando os dados que obtem a coluna em comum, obtendo apenas 10 resultados na coluna que tem em comum: StateProvinceID.
+
+
+Tipos de Joins
+
+INNER JOIN
+(Retorna apenas os resultados que correspondem (existem) tanto na tabela A como Tabela B)
+
+Ex.: 
+SELECT * 
+FROM TabelaA
+INNER JOIN TabelaB
+ON TabelaA.nome = TabelaB.nome
+
+FULL OUTER JOIN
+(Retorna um conjunto de todos os registros correspondentes da tabelaA e tabelaB quando são iguais. E além disso se não houver valores correspondentes, ele simplismente irá preencher esse lado com "null")
+
+Ex.:
+SELECT * 
+FROM TabelaA
+FULL OUTER JOIN TabelaB
+ON TabelaA.nome = TabelaB.nome
+
+LEFT OUTER JOIN ou LEFT JOIN
+(Retorna um conjunto de todos os registros da TabelaA, e elém disso, os registros correspondentes(quando disponíveis) na TabelaB. Se não houver registros correspondentes, ele simplesmente vai preencher com "null")
+
+Ex.:
+SELECT  *
+FROM TabelaA
+LEFT JOIN TabelaB
+ON TabelaA.nome = TabelaB.nome 
+
+RIGHT OUTER JOIN 
+Oposto do LEFT OUTER JOIN
+
+
+Exemplos de OUTER JOIN
+
+--Descobrindo quantas pessoas não tem cartão de crédito registrados
+
+SELECT *
+FROM Person.Person PP
+INNER JOIN Sales.PersonCreditCard PC
+ON PP.BusinessEntityID = PC.BusinessEntityID
+--INNER JOIN = Pessoas que possuem cartão registrados 19118
+
+SELECT *
+FROM Person.Person PP
+LEFT JOIN Sales.PersonCreditCard PC
+ON PP.BusinessEntityID = PC.BusinessEntityID
+WHERE PC.BusinessEntityID IS NULL
+--LEFT JOIN + WHERE = Pessoas que não possuem cartão registrados 854
+
+
+Operador Union 
+(Combina dois ou mais resultados de um select em um resultado apenas)
+
+Ex.:
+SELECT [ProductID], [Name], [ProductNumber]
+FROM Production.Product
+WHERE Name like '%Chain%'
+UNION
+SELECT [ProductID], [Name], [ProductNumber]
+FROM Production.Product
+WHERE Name like '%Decal%' --Unindo dois nomes em uma única pesquisa
+
+
+DatePart
+(Trabalhando com datas)
+
+SELECT SalesOrderID, DATEPART(month,OrderDate) AS "MES"
+FROM Sales.SalesOrderHeader --Extraindo o mês da ordem de serviço
+
+SELECT AVG (TotalDue) AS "Media", DATEPART(month,OrderDate) as MES
+FROM Sales.SalesOrderHeader
+GROUP BY DATEPART(MONTH,OrderDate)
+ORDER BY Mes --Ordenando a média por mês das vendas
+
+
+Manipulação de String
+
+SELECT CONCAT (FirstName,' ',LastName)
+FROM Person.Person --Concatenando (Juntando) caracteres
+
+SELECT UPPER (FirstName)
+FROM Person.Person --Colocando todo o resultado em maiúsculo 
+
+SELECT LOWER (FirstName)
+FROM Person.Person --Colocando todo o resultado em minúsculo
+
+SELECT firstname, LEN (FirstName)
+FROM Person.Person --Contando os caracteres
+
+SELECT firstname, SUBSTRING(FirstName, 1, 3)
+FROM Person.Person --Extraindo uma quantidade de letras
+
+SELECT productNumber, REPLACE(ProductNumber, '-', '#')
+FROM Production.Product --Substituindo uma informação 
+
+
+Operações Matemáticas 
+
+SELECT UnitPrice + LineTotal
+FROM Sales.SalesOrderDetail --Somando as colunas
+
+SELECT ROUND(LineTotal,2)
+FROM Sales.SalesOrderDetail --Arredondando os valores
+
+SELECT SQRT(Linetotal)
+FROM Sales.SalesOrderDetail --Raiz quadrada dos valores
+
+
+Subquery
+
+Montando um relatório de todos os produtos cadastrados que tem preço de venda acima da média
+
+SELECT *
+FROM Production.Product
+WHERE ListPrice > (SELECT AVG(listPrice) from Production.Product)
+
+Buscando funcionários que tenho o cargo de 'Design Engineer'
+
+SELECT FirstName
+FROM Person.Person
+WHERE BusinessEntityID IN (
+SELECT BusinessEntityID FROM HumanResources.Employee
+WHERE JobTitle = 'Design Engineer') 
+
+
+Encontrando os endereços que estão no estado de 'Alberta', trazendo todas as informações
+
+SELECT *
+FROM Person.Address
+WHERE StateProvinceID IN (
+SELECT StateProvinceID FROM Person.StateProvince
+WHERE Name = 'Alberta') 
+
+SELF-JOIN
+
+Ex.: 
+--SELECT NOME_COLUNA
+--FROM TABELA A, TABELA B 
+--WHERE CONDICAO
+
+-- Listar todos os clientes que moram na mesma região
+
+SELECT A.ContactName,A.Region, B.Region, B.ContactName
+FROM Customers A, Customers B
+WHERE A.Region = B.Region 
+
+-- Encontrar nome e data de contratação de todos os funcionários que foram contratados no mesmo ano
+
+SELECT A.firstname, A.hiredate, B.firstname, B.hiredate
+FROM Employees A, Employees B
+WHERE DATEPART(YEAR, a.hiredate) = DATEPART(YEAR, b.hiredate)
+
+-- Desafio: Na Tabela detalhe do pedido [Ordeer Details] Quais produtos tem o mesmo percentual de desconto 
+
+SELECT A.productId, A.discount, B.productId, B.discount
+FROM [Order Details] A, [Order Details]B
+WHERE A.Discount = B.Discount
+
+
+Tipos de Dados
+
+1. Boleanos: BIT
+ 
+2. Caracteres: Tamanho Fixo: char e Tamanho Variável: varchar ou nvarchar
+
+3. Números: 
+
+Valores Exatos: TINYINT: valor inteiro e NUMERIC E DECIMAL: valores exatos, porém permite ter parte fracionadas.
+
+Valores Aproximados: REAL : tem precisão aproximada de até 15 digitos e FLOAT: mesmo conceito
+
+Temporais :
+ DATE : armazena data no formato aaaa/mm/dd
+ DATETIME: armazena data e horas no formato aaaa/mm/dd : hh:mm:ss
+ DATETIME2: data e hora com adição de milissegundos no formato         aaaa/mm/dd: hh : mm : sssssss 
+ SMALLDATETIME: data e hora nos respeitando o limite entre '1900-01-01 : 00 : 00 : 00 até '2079-06-06 : 23 : 59 : 59.
+ TIME: horas, minutos, segundos e milissegundos
+ DATETIMEOFFSET: permite armazenar informações de data e horas incluindo o fuso horário.
+
+
+Chave Primária e Estrangeira 
+
+Chave Primária: É basicamente uma coluna ou grupo de colunas, usada para identificar unicamente uma linha em uma tabela 
+
+Chave Estrangeira: É simplesmente uma coluna ou grupo de colunas que é uma chave primária em outra tabela.
+
+Creat Table 
+
+Principais restrições para aplicação: 
+
+NOT NULL: Não permite nulos 
+UNIQUE: Força que todos os valores em uma coluna sejam diferentes
+PRIMAY KEY:  Uma junção de NOT NULL e UNIQUE
+FOREIGN KEY: Identifica unicamente uma linha em outra tabela 
+CHECK : Força uma condição específica em uma coluna 
+DEFAULT: Força um valor padrão quando nenhum valor é passado
+
+Criando uma tabela Ex.(YouTube): 
+
+CREATE TABLE Canal (
+CanalId int Primary KEY,
+Nome VARCHAR(150) NOT NULL,
+ContagemInscritos INT DEFAULT 0,
+DataCriacao DATETIME NOT NULL
+);   
+
+CREATE TABLE Video (
+VideoId INT PRIMARY KEY,
+Nome VARCHAR(150) NOT NULL,
+Visualizacoes INT DEFAULT 0,
+Likes INT DEFAULT 0,
+Dislikes INT DEFAULT 0,
+Duracao INT NOT NULL,
+CanalId INT FOREIGN KEY REFERENCES Canal(CanalId)
+);
+
+- Para verificar as colunas criadas na tabela: select * from Video
+
+
+Insert Into
+(Inserindo informações na tabela)
+
+Ex.: 
+
+INSERT INTO aula(id,nome) --Colunas a serem inseridas na tabela aula 
+VALUES(1,'aula 1') --id = 1 e nome = aula 1
+
+Adicionando mais id e nomes
+
+INSERT INTO aula(id,nome) 
+VALUES
+(2,'aula 2'), 
+(3,'aula 3'),
+(4,'aula 4');
+
+--Adicionando informações de uma tabela para criação de outra.
+SELECT * INTO tabelaNova FROM aula 
+
+
+Update
+(Alterando Dados)
+
+Ex.: 
+
+Alterando o nome do Id 3 da tabela aula 
+
+UPDATE aula 
+SET nome = 'aula alterada'
+WHERE id = 3
+
+
+Delete
+
+Ex.:
+
+Deletando o nome do Id 3 da tabela aula 
+
+DELETE FROM aula 
+WHERE nome = 'aula alterada'
+
+
+Alter Table 
+(Alterar estrutura de uma tabela. Usando ALTER TABLE)
+
+Ex.: 
+
+Criação de nova coluna
+
+ALTER TABLE youtube 
+add ativo bit 
+
+Alterando o tipo de limite da coluna categoria 'varchar de (200) para varchar(300)
+
+ALTER TABLE youtube 
+ALTER COLUMN categoria varchar(300) not null 
+
+Alterando o nome de uma coluna 
+
+EXEC sp_Rename 'youtube.nome', 'nomeCanal', 'COLUMN'
+
+Alterando o nome de uma tabela 
+
+EXEC sp_Rename 'youtube', 'YouTube2'
+
+
+Drop Table
+(Dropar (excluir) uma tabela do banco de dados, usando DROP TABLE)
+
+Ex.:
+
+Excluindo tabela 
+
+drop table + o nome da tabela 
+
+Excluindo informações de uma tabela
+
+truncate table Person.password
+
+
+Boas Práticas em bancos relacionais 
+
+Check Constraint 
+(Criar restrições de valores que podem ser inseridos em uma coluna de uma tabela em banco de dados quando você está criando uma tabela nova)
+
+Ex.:
+
+-- Criando uma tabela de Carteira de Motorista com restrição de idade 
+
+CREATE TABLE CarteiraMotorista(
+Id int NOT NULL,
+Nome varchar(255) NOT NULL,
+Idade int CHECK (Idade >= 18) --Verificando se a idade é maior ou igual a 18
+); 
+
+--Inserindo informações na tabela CarteiraMotorista
+
+insert into CarteiraMotorista (Id,Nome,Idade)
+values (1,'thyago', 30) -- 30 idade válida
+
+
+Not Null Constraint
+(Criar restrições com que não seja possível inserir dados em uma tabela sem preencher a coluna marcada como NOT NULL (NÃO NULA))
+
+
+Unique Constraint 
+(Colunas únicas, porem diferente de uma primary key, pode existir várias colunas com a restrição UNIQUE)
+
+CREATE TABLE CarteiraMotorista(
+Id int NOT NULL,
+Nome varchar(255) NOT NULL,
+Idade int CHECK (Idade >= 18),
+CodigoCNH int NOT NULL UNIQUE --Estabelecendo a criação de um código único(evitando a sua duplicidade) usando UNIQUE.
+);
+
+Inserindo informações na tabela o código colocado, não poderá mais ser duplicado
+
+insert into CarteiraMotorista (Id,Nome,Idade,CodigoCNH)
+values (1,'thyago', 30, 123456)
+
+
+Views
+(Tabelas criadas para consulta onde você usa outras tabelas como base para criar uma nova tabela de pesquisa com apenas dados específicos que você precisa de uma tabela)
+
+Ex.:
+
+--Criando uma tabela para simplificar a busca de informações de outra tabela
+
+CREATE VIEW [Pessoas Simplificado] AS 
+SELECT FirstName, MiddleName, LastName
+FROM Person.Person
+WHERE Title = 'Ms.'
