@@ -1,0 +1,39 @@
+#Introdução a microsserviços com .NET
+
+- Microsserviços são uma abordagem arquitetônica e organizacional do desenvolvimento de software na qual o software consiste em pequenos serviços independentes que se comunicam usando APIs bem definidas. Esses serviços pertencem a pequenas equipes autossuficientes.
+
+- Os microsserviços se comunicam usando protocolos como HTTP (REST), mas também de forma assíncrona (usando AMQP, por exemplo) sempre que possível, especialmente ao propagar atualizações com eventos de integração. Os microsserviços são desenvolvidos e implantados como contêineres independentes uns dos outros.
+
+Exemplo usado: 
+Monólito
+1. Pedra de grandes proporções.
+2. Monumento ou obra constituída por um só bloco de pedra.
+
+Escalabilidade horizontal  e vertical 
+
+Escala horizontal significa que você escala adicionando mais máquinas ao seu conjunto de recursos, enquanto Escala vertical significa que você escala adicionando mais energia (CPU, RAM) a uma máquina existente . ... Ele fornece uma maneira fácil de escalar verticalmente, alternando de máquinas pequenas para maiores.
+
+
+Manifesto Ágil 
+
+O desenvolvimento ágil é uma abordagem em que softwares são desenvolvidos de forma colaborativa, com equipes multidisciplinares que têm um bom nível de autonomia na execução de seus trabalhos. Muitos consideram o desenvolvimento ágil como um conjunto de métodos, mas essa visão é, de certa forma, limitada.
+
+Ecossistemas e Microsserviços
+
+A arquitetura de microsserviços é uma abordagem de desenvolvimento, cuja ideia é “fazer apenas uma coisa e fazê-la bem”. Ou seja, em vez de construir uma aplicação em forma de monolito, é feito um desmembramento dos serviços em partes menores. Os benefícios dessa arquitetura são alta escalabilidade, resiliência, facilidade de implantação e aumento na eficiência da manutenção dos sistemas. 
+
+Mais informações:
+https://www.opus-software.com.br/arquitetura-de-microsservicos/
+
+
+API 
+
+API é um conjunto de rotinas e padrões de programação para acesso a um aplicativo de software ou plataforma baseado na Web. A sigla API refere-se ao termo em inglês "Application Programming Interface" que significa em tradução para o português "Interface de Programação de Aplicativos".
+
+O conceito de API nada mais é do que uma forma de comunicação entre sistemas. Elas permitem a integração entre dois sistemas, em que um deles fornece informações e serviços que podem ser utilizados pelo outro, sem a necessidade de o sistema que consome a API conhecer detalhes de implementação do software.
+
+API pública, também chamada de API aberta, são aquelas aplicações que podem ser utilizadas por qualquer desenvolvedor ou empresa.
+
+Deploy 
+
+O verbo deploy, em inglês, quer dizer implantar. Em programação, seu sentido está intimamente relacionado à sua tradução literal: fazer um deploy, em termos práticos, significa colocar no ar alguma aplicação que teve seu desenvolvimento concluído.
