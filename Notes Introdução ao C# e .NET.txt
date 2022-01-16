@@ -1,0 +1,60 @@
+ #Step 1 -  Introdução ao C# e .NET 
+
+Estrutura
+
+namespaces: São usados para organizar classes, para usar uma classe de outro namespace, colocamos using no começo do código.
+
+classe: Define propriedades, campos, eventos, métodos, etc. Um objeto é uma instância de uma classe.
+
+Interface: É como uma classe base que serve de molde para várias classes. Uma classe que implementa uma interface deve implementar todos os membros. 
+Diferente de classes as interfaces podem empregar herança múltipla. 
+
+Enum: Declara um conjunto de constantes nomeadas que começam do 0  e aumentam de  1 em 1.
+
+Debugging
+
+A depuração pode ser feita colocando um BreakPoint no canto esquerdo do código ou apertando f9 e executando ele.
+
+o código vai parar onde foi colocado o BreakPoint e então o código poderá ser inspecionado. 
+
+
+
+#Step 2 - Primeiros passos com com .NET 
+
+- Criando uma aplicação console: No terminal, digita:
+dotnet new console -n + o nome. 
+code . - Para abrir os arquivos no VS Code
+dotnet restore -  Para baixar e atualizar pacotes 
+dotenet build  - Processo de compilação para gerar o binário e verificar se contém algum erro
+dotnet run - Executa o código
+
+Conhecendo Variáveis e Instruções
+
+Tipos de valor 
+- Numéricos: Byte, int, long 
+- Caracteres Unicode: char 
+- Pontos flutuantes: float, double, decimal
+- Booleano: bool
+enum, struct e tipos 
+
+Tipos de Referência
+- Tipos Classe: class, object, string
+- Tipos Arrays: int[ ], int[ , ], etc...
+interface, delegate
+
+Instruções 
+
+Declaração de variáveis e constantes locais
+Condicionai: if e switch 
+Repetição: do while, for e foreach
+Auxiliares: break, continue, return
+Exceção: throw, try.. catch.. finally
+Referência a pacotes e namespace: using 
+
+Structs
+
+Uma variável que armazena diretamente os dados da estrutura, enquanto uma variável de um tipo classe armazena uma referência a um objeto alocado na memória.
+
+Não aceitam herança determinada pelo desenvolvedor
+
+O uso de structs em vez de classes para pequenas estruturas de dados pode fazer uma grande diferença no número de alocações de memória.  
