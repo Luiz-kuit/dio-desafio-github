@@ -1,0 +1,10 @@
+#Design Patterns com .NET
+
+O que é Design Patterns 
+
+Definir de forma organizada padrões de solução de problemas comuns encontrados durante projetos.
+
+Design Patterns nada mais são do que soluções generalistas para problemas que surgem de forma recorrente ao longo do desenvolvimento de softwares. Ou seja: são soluções elegantes, prontas, pensadas, testadas e aprovadas para situações comuns e que surgem no cotidiano.
+
+Mais informações:
+https://www.hostgator.com.br/blog/design-patterns-e-seus-beneficios/
