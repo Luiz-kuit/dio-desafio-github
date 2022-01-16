@@ -1,2 +1,4 @@
-# Desafio de projeto sobre Git/GitHub da DIO 
-Repositório criado para desafio de projeto.
+# Projeto Decola Tech 2ª edição 
+Repositório criado para inclusão dos desafios proposto, como também do aprendizado ao decorrer do Bootcamp.
+
+
