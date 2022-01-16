@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f659718d-e7c4-43b4-8ec5-24e6f567261a": {
+      "ProjectGuid": "f659718d-e7c4-43b4-8ec5-24e6f567261a",
+      "DisplayName": "DIO.CopaNordeste .Console",
+      "ColorIndex": 0
+    },
+    "34e76452-a8cd-4afe-91ba-d01187afe506": {
+      "ProjectGuid": "34e76452-a8cd-4afe-91ba-d01187afe506",
+      "DisplayName": "DIO.CopaNordeste",
+      "ColorIndex": 1
+    },
+    "1ee8bff8-ac87-4c7e-96f0-552f8be9ef26": {
+      "ProjectGuid": "1ee8bff8-ac87-4c7e-96f0-552f8be9ef26",
+      "DisplayName": "DIO.CopaNordeste.Web",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

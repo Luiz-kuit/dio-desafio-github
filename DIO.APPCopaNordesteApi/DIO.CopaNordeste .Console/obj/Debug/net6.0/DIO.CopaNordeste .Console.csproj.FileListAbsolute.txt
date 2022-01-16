@@ -1,0 +1,18 @@
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\bin\Debug\net6.0\DIO.CopaNordeste .Console.exe
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\bin\Debug\net6.0\DIO.CopaNordeste .Console.deps.json
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\bin\Debug\net6.0\DIO.CopaNordeste .Console.runtimeconfig.json
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\bin\Debug\net6.0\DIO.CopaNordeste .Console.dll
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\bin\Debug\net6.0\ref\DIO.CopaNordeste .Console.dll
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\bin\Debug\net6.0\DIO.CopaNordeste .Console.pdb
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\bin\Debug\net6.0\DIO.CopaNordeste.dll
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\bin\Debug\net6.0\DIO.CopaNordeste.pdb
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\obj\Debug\net6.0\DIO.CopaNordeste .Console.csproj.AssemblyReference.cache
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\obj\Debug\net6.0\DIO.CopaNordeste .Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\obj\Debug\net6.0\DIO.CopaNordeste .Console.AssemblyInfoInputs.cache
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\obj\Debug\net6.0\DIO.CopaNordeste .Console.AssemblyInfo.cs
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\obj\Debug\net6.0\DIO.CopaNordeste .Console.csproj.CoreCompileInputs.cache
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\obj\Debug\net6.0\DIO.CopaNordeste .Console.csproj.CopyComplete
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\obj\Debug\net6.0\DIO.CopaNordeste .Console.dll
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\obj\Debug\net6.0\ref\DIO.CopaNordeste .Console.dll
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\obj\Debug\net6.0\DIO.CopaNordeste .Console.pdb
+C:\Users\Thyago Santos\OneDrive\Tech\DIO\DIO.APPCopaNordesteApi\DIO.CopaNordeste .Console\obj\Debug\net6.0\DIO.CopaNordeste .Console.genruntimeconfig.cache

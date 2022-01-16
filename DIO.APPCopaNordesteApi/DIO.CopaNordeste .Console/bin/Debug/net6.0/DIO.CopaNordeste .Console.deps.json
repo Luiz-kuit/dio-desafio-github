@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DIO.CopaNordeste .Console/1.0.0": {
+        "dependencies": {
+          "DIO.CopaNordeste": "1.0.0"
+        },
+        "runtime": {
+          "DIO.CopaNordeste .Console.dll": {}
+        }
+      },
+      "DIO.CopaNordeste/1.0.0": {
+        "runtime": {
+          "DIO.CopaNordeste.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DIO.CopaNordeste .Console/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DIO.CopaNordeste/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

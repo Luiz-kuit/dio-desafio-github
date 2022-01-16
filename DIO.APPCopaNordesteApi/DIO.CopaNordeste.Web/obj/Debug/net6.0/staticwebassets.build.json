@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "tpsV4fvgqmGi+QusFoFUSMZtNIV3hTbFmk926f1A2gA=",
+  "Source": "DIO.CopaNordeste.Web",
+  "BasePath": "_content/DIO.CopaNordeste.Web",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
