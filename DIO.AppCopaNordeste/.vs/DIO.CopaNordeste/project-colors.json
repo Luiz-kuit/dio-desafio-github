@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "34e76452-a8cd-4afe-91ba-d01187afe506": {
+      "ProjectGuid": "34e76452-a8cd-4afe-91ba-d01187afe506",
+      "DisplayName": "DIO.CopaNordeste",
+      "ColorIndex": 0
+    },
+    "f659718d-e7c4-43b4-8ec5-24e6f567261a": {
+      "ProjectGuid": "f659718d-e7c4-43b4-8ec5-24e6f567261a",
+      "DisplayName": "DIO.CopaNordeste .Console",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
